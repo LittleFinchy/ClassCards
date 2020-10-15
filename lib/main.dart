@@ -3,18 +3,19 @@ import 'settings.dart';
 import 'drawer.dart';
 
 void main() {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: MyApp()));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: MyApp(),
+  ),
+  );
 }
 
-//leave app bar alone
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: bodyColor,
         appBar: AppBar(
-          title: Text("Milo's Project",
-              style: TextStyle(color: Colors.white, fontSize: 24)),
+          title: Text("ClassCards",
+              style: TextStyle(color: Colors.white, fontSize: 24),),
           centerTitle: true,
           backgroundColor: barColor,
           elevation: 10,
@@ -26,11 +27,12 @@ class MyApp extends StatelessWidget {
             )
           ],
         ),
-        drawer: drawer,
+        drawer: myDrawer,
         body: Center(
           child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+                Container(width: 100, height: 100, color: Colors.blue[800],),
                 Container(
                     //width: 100,
                     //height: 100,
@@ -40,13 +42,14 @@ class MyApp extends StatelessWidget {
                   decoration: const ShapeDecoration(
                       color: Colors.lightBlue, shape: CircleBorder()),
                   child: IconButton(
-                    icon: Icon(Icons.android),
+                    icon: Icon(Icons.library_books),
                     color: Colors.white,
                     onPressed: () {},
                   ),
-                ))),
-                Container(width: 100, height: 100, color: Colors.blue[800]),
-                Container(width: 100, height: 100, color: Colors.blue[800]),
+                ),
+                ),
+                ),
+                Container(width: 100, height: 100, color: Colors.blue[800],),
               ]),
         ));
   }

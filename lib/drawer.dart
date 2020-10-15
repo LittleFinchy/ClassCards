@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget drawer = Drawer(
+Widget myDrawer = Drawer(
   child: ListView(
     padding: EdgeInsets.zero,
     children: const <Widget>[

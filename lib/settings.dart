@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
 
-Color bodyColor = Colors.indigo[100];
-Color barColor = Colors.indigo[400];
+Color appBarColor = Color(0xFFE56D47);
+Color appBodyColor = Color(0xFFD96744);
+Color appButtonColor = Color(0xFFDC7654);

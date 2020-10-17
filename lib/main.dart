@@ -3,54 +3,79 @@ import 'settings.dart';
 import 'drawer.dart';
 
 void main() {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: MyApp(),
-  ),
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyApp(),
+    ),
   );
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
-        backgroundColor: bodyColor,
+        backgroundColor: appBodyColor,
         appBar: AppBar(
-          title: Text("ClassCards",
-              style: TextStyle(color: Colors.white, fontSize: 24),),
+          backgroundColor: appBarColor,
+          title: Text('FLASHi'),
           centerTitle: true,
-          backgroundColor: barColor,
-          elevation: 10,
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(12))),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.flash_on, color: Colors.white),
-            )
-          ],
+              borderRadius: BorderRadius.vertical(bottom: Radius.circular(10))),
         ),
-        drawer: myDrawer,
         body: Center(
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(width: 100, height: 100, color: Colors.blue[800],),
-                Container(
-                    //width: 100,
-                    //height: 100,
-                    //color: Colors.blue[100],
-                    child: Center(
-                        child: Ink(
-                  decoration: const ShapeDecoration(
-                      color: Colors.lightBlue, shape: CircleBorder()),
-                  child: IconButton(
-                    icon: Icon(Icons.library_books),
-                    color: Colors.white,
-                    onPressed: () {},
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ClipOval(
+                child: Container(
+                  width: 160,
+                  height: 160,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 3,
+                    ),
+                    // borderRadius: BorderRadius.circular(40),
+                    shape: BoxShape.circle,
+                    color: appButtonColor,
+                    boxShadow: [
+                      new BoxShadow(
+                        color: Colors.black,
+                        spreadRadius: 0,
+                        blurRadius: 0,
+                        offset: Offset(50, 0),
+                      ),
+                    ],
+                  ),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(25),
+                      onTap: () {},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.border_color,
+                            size: 50,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            'Create',
+                            style: TextStyle(color: Colors.white, fontSize: 30),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-                ),
-                ),
-                Container(width: 100, height: 100, color: Colors.blue[800],),
-              ]),
-        ));
+              ),
+            ],
+          ),
+        ),
+        drawer: myDrawer);
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'settings.dart';
 import 'drawer.dart';
+import 'widgets/homePageButton.dart';
+import 'screens/subjects_screen.dart';
 
 void main() {
   runApp(
@@ -11,71 +13,79 @@ void main() {
   );
 }
 
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     var size = MediaQuery.of(context).size;
+//     return Scaffold(
+//         backgroundColor: appBodyColor,
+//         appBar: AppBar(
+//           backgroundColor: appBarColor,
+//           title: Text('FLASHi'),
+//           centerTitle: true,
+//           actions: [
+//            IconButton(
+//                 icon: Icon(
+//                   Icons.info_outline,
+//                   color: Colors.white,
+//                 ),
+//                 onPressed: () {})
+//           ],
+//           shape: RoundedRectangleBorder(
+//               borderRadius: BorderRadius.vertical(bottom: Radius.circular(10))),
+//         ),
+//         body: Center(
+//           child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.center,
+//             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//             children: [
+//               buildButton(
+//                 text: 'Study',
+//                 icon: Icon(
+//                   Icons.edit,
+//                   color: Colors.white,
+//                   size: 50,
+//                 ),
+//               ),
+//               buildButton(
+//                 text: 'Create',
+//                 icon: Icon(
+//                   Icons.add_to_photos,
+//                   color: Colors.white,
+//                   size: 50,
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//         drawer: myDrawer,
+//      );
+//   }
+// }
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-        backgroundColor: appBodyColor,
-        appBar: AppBar(
-          backgroundColor: appBarColor,
-          title: Text('FLASHi'),
-          centerTitle: true,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(10))),
-        ),
-        body: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ClipOval(
-                child: Container(
-                  width: 160,
-                  height: 160,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.white,
-                      width: 3,
-                    ),
-                    // borderRadius: BorderRadius.circular(40),
-                    shape: BoxShape.circle,
-                    color: appButtonColor,
-                    boxShadow: [
-                      new BoxShadow(
-                        color: Colors.black,
-                        spreadRadius: 0,
-                        blurRadius: 0,
-                        offset: Offset(50, 0),
-                      ),
-                    ],
-                  ),
-                  child: Material(
-                    color: Colors.transparent,
-                    child: InkWell(
-                      borderRadius: BorderRadius.circular(25),
-                      onTap: () {},
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.border_color,
-                            size: 50,
-                            color: Colors.white,
-                          ),
-                          Text(
-                            'Create',
-                            style: TextStyle(color: Colors.white, fontSize: 30),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+      backgroundColor: appBodyColor,
+      appBar: AppBar(
+        backgroundColor: appBarColor,
+        title: Text('FLASHi'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+              icon: Icon(
+                Icons.info_outline,
+                color: Colors.white,
               ),
-            ],
-          ),
-        ),
-        drawer: myDrawer);
+              onPressed: () {})
+        ],
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(10))),
+      ),
+      body: SubjectScreen(),
+      drawer: myDrawer,
+    );
   }
 }

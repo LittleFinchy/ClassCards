@@ -1,36 +1,36 @@
 import 'package:flutter/material.dart';
 import '../settings.dart';
 
-class _buildButton extends StatelessWidget {
+class buildButton extends StatelessWidget {
   final String text;
   final Icon icon;
-  const _buildButton({
+  const buildButton({
     Key key,
     this.text,
     this.icon,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return ClipOval(
-      child: Container(
-        width: 160,
-        height: 160,
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.white,
-            width: 3,
-          ),
-          shape: BoxShape.circle,
-          color: appButtonColor,
-          boxShadow: [
-            new BoxShadow(
-              color: Colors.black,
-              spreadRadius: 0,
-              blurRadius: 0,
-              offset: Offset(50, 0),
-            ),
-          ],
+    return Container(
+      width: 160,
+      height: 160,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.white,
+          width: 3,
         ),
+        shape: BoxShape.circle,
+        color: appButtonColor,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black,
+            spreadRadius: -10,
+            blurRadius: 15,
+            offset: Offset(0, 5),
+          ),
+        ],
+      ),
+      child: ClipOval(
         child: Material(
           color: Colors.transparent,
           child: InkWell(

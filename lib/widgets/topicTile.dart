@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import '../settings.dart';
 
-class SubjectTile extends StatelessWidget {
-  final String subjectTitle;
-  final IconData subjectIcon;
-  final Function action;
-  SubjectTile({
+class TopicTile extends StatelessWidget {
+  final String topicTitle;
+  final GestureTapCallback action;
+  TopicTile({
     Key key,
-    this.subjectTitle = 'Math',
-    this.subjectIcon = Icons.calculate_rounded,
+    this.topicTitle,
     this.action,
   }) : super(key: key);
   @override
@@ -38,21 +36,11 @@ class SubjectTile extends StatelessWidget {
           color: Colors.transparent,
           child: InkWell(
             borderRadius: BorderRadius.circular(25),
-            onTap: action == null ? () {} : action,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  subjectIcon,
-                  size: 80,
-                  color: Colors.white,
-                ),
-                Text(
-                  subjectTitle,
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                  textAlign: TextAlign.center,
-                ),
-              ],
+            onTap: () {},
+            child: Text(
+              topicTitle,
+              style: TextStyle(color: Colors.white, fontSize: 20),
+              textAlign: TextAlign.center,
             ),
           ),
         ),

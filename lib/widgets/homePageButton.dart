@@ -3,17 +3,19 @@ import '../settings.dart';
 
 class BuildHomeButton extends StatelessWidget {
   final String text;
-  final Icon icon;
+  final IconData icon;
+  final Function action;
   const BuildHomeButton({
     Key key,
-    this.text,
-    this.icon,
+    this.text = 'Study',
+    this.icon = Icons.edit,
+    this.action,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 160,
-      height: 160,
+      width: 170,
+      height: 170,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.white,
@@ -35,11 +37,15 @@ class BuildHomeButton extends StatelessWidget {
           color: Colors.transparent,
           child: InkWell(
             borderRadius: BorderRadius.circular(25),
-            onTap: () {},
+            onTap: action == null ? () {} : action,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                icon,
+                Icon(
+                  icon,
+                  color: Colors.white,
+                  size: 50,
+                ),
                 Text(
                   text,
                   style: TextStyle(color: Colors.white, fontSize: 30),

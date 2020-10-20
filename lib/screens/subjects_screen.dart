@@ -1,74 +1,52 @@
 import 'package:flutter/material.dart';
-import '../settings.dart';
+import '../widgets/screenConstructor.dart';
 import '../widgets/subjectTile.dart';
 
 class SubjectScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        //padding: const EdgeInsets.all(10),
+    return ScreenWrapper(
+      newBody: Container(
         child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            SubjectTile(
-              subjectTitle: 'Math',
-              subjectIcon: Icon(
-                Icons.calculate_rounded,
-                size: 80,
-                color: Colors.white,
-              ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SubjectTile(
+                  subjectTitle: 'Math',
+                  subjectIcon: Icons.calculate_rounded,
+                ),
+                SubjectTile(
+                  subjectTitle: 'Science',
+                  subjectIcon: Icons.science_rounded,
+                ),
+                SubjectTile(
+                  subjectTitle: 'English',
+                  subjectIcon: Icons.menu_book_rounded,
+                ),
+              ],
             ),
-            SubjectTile(
-              subjectTitle: 'Science',
-              subjectIcon: Icon(
-                Icons.science_rounded,
-                size: 80,
-                color: Colors.white,
-              ),
-            ),
-            SubjectTile(
-              subjectTitle: 'English',
-              subjectIcon: Icon(
-                Icons.menu_book_rounded,
-                size: 80,
-                color: Colors.white,
-              ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SubjectTile(
+                  subjectTitle: 'Social Studies',
+                  subjectIcon: Icons.school_rounded,
+                ),
+                SubjectTile(
+                  subjectTitle: 'World Languages',
+                  subjectIcon: Icons.translate_rounded,
+                ),
+                SubjectTile(
+                  subjectTitle: 'Custom Decks',
+                  subjectIcon: Icons.build_circle_rounded,
+                ),
+              ],
             ),
           ],
         ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            SubjectTile(
-              subjectTitle: 'Social Studies',
-              subjectIcon: Icon(
-                Icons.school_rounded,
-                size: 80,
-                color: Colors.white,
-              ),
-            ),
-            SubjectTile(
-              subjectTitle: 'World Languages',
-              subjectIcon: Icon(
-                Icons.translate_rounded,
-                size: 80,
-                color: Colors.white,
-              ),
-            ),
-            SubjectTile(
-              subjectTitle: 'Custom Decks',
-              subjectIcon: Icon(
-                Icons.build_circle_rounded,
-                size: 80,
-                color: Colors.white,
-              ),
-            ),
-          ],
-        ),
-      ],
-    ));
+      ),
+    );
   }
 }

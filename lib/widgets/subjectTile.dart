@@ -5,9 +5,9 @@ class SubjectTile extends StatelessWidget {
   final String subjectTitle;
   final Icon subjectIcon;
   final GestureTapCallback action;
-  const SubjectTile({
+  SubjectTile({
     Key key,
-    this.subjectTitle,
+    this.subjectTitle = 'Math',
     this.subjectIcon,
     this.action,
   }) : super(key: key);

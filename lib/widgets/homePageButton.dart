@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../settings.dart';
 
-class BuildButton extends StatelessWidget {
+class BuildHomeButton extends StatelessWidget {
   final String text;
   final Icon icon;
-  const BuildButton({
+  const BuildHomeButton({
     Key key,
     this.text,
     this.icon,

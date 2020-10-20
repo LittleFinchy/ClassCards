@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'settings.dart';
 import 'drawer.dart';
-import 'widgets/homePageButton.dart';
+import 'screens/home_page.dart';
 import 'screens/subjects_screen.dart';
+// import 'screens/screen_select.dart';
 
 void main() {
   runApp(
@@ -17,48 +18,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    var screenID = 0; //0 for main, 1 for subjects
     return Scaffold(
-        backgroundColor: appBodyColor,
-        appBar: AppBar(
-          backgroundColor: appBarColor,
-          title: Text('FLASHi'),
-          centerTitle: true,
-          actions: [
-            IconButton(
-                icon: Icon(
-                  Icons.info_outline,
-                  color: Colors.white,
-                ),
-                onPressed: () {})
-          ],
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(10))),
-        ),
-        body: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              BuildButton(
-                text: 'Study',
-                icon: Icon(
-                  Icons.edit,
-                  color: Colors.white,
-                  size: 50,
-                ),
+      backgroundColor: appBodyColor,
+      appBar: AppBar(
+        backgroundColor: appBarColor,
+        title: Text('FLASHi'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+              icon: Icon(
+                Icons.info_outline,
+                color: Colors.white,
               ),
-              BuildButton(
-                text: 'Create',
-                icon: Icon(
-                  Icons.add_to_photos,
-                  color: Colors.white,
-                  size: 50,
-                ),
-              ),
-            ],
-          ),
-        ),
-        drawer: myDrawer,
+              onPressed: () {})
+        ],
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(10))),
+      ),
+      body: SubjectScreen(),
+      drawer: myDrawer,
     );
   }
 }

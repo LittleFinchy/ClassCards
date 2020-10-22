@@ -1,9 +1,7 @@
+import 'package:class_cards/screens/study_screen.dart';
 import 'package:flutter/material.dart';
-import 'settings.dart';
-import 'drawer.dart';
 import 'screens/home_screen.dart';
 import 'screens/subjects_screen.dart';
-import 'screens/topic_screen.dart';
 
 void main() {
   runApp(Nav());
@@ -13,8 +11,9 @@ class Nav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(routes: {
-      '/': (context) => HomeScreen(),
+      '/': (context) => HomeScreen(), // Was HomeScreen() ...... im just testing this study screen
       '/subjects': (context) => SubjectScreen(),
+      '/study': (context) => StudyScreen(),
     });
   }
 }

@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import '../drawer.dart';
+import '../settings.dart';
+
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,7 @@ class HomeScreen extends StatelessWidget {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(10))),
       ),
-      // body:       
+      // body:
       drawer: myDrawer,
     );
   }

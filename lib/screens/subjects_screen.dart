@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/screenConstructor.dart';
 import '../widgets/subjectTile.dart';
+import 'topic_screen.dart';
 
 class SubjectScreen extends StatelessWidget {
   @override
@@ -14,34 +15,52 @@ class SubjectScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SubjectTile(
-                  subjectTitle: 'Math',
-                  subjectIcon: Icons.calculate_rounded,
-                ),
+                    subjectTitle: 'Math',
+                    subjectIcon: Icons.calculate_rounded,
+                    action: () {
+                      Navigator.pushNamed(context, '/topic',
+                          arguments: TopicArguments('Math'));
+                    }),
                 SubjectTile(
-                  subjectTitle: 'Science',
-                  subjectIcon: Icons.science_rounded,
-                ),
+                    subjectTitle: 'Science',
+                    subjectIcon: Icons.science_rounded,
+                    action: () {
+                      Navigator.pushNamed(context, '/topic',
+                          arguments: TopicArguments('Science'));
+                    }),
                 SubjectTile(
-                  subjectTitle: 'English',
-                  subjectIcon: Icons.menu_book_rounded,
-                ),
+                    subjectTitle: 'World Languages',
+                    subjectIcon: Icons.translate_rounded,
+                    action: () {
+                      Navigator.pushNamed(context, '/topic',
+                          arguments: TopicArguments('World Languages'));
+                    }),
               ],
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SubjectTile(
-                  subjectTitle: 'Social Studies',
-                  subjectIcon: Icons.school_rounded,
-                ),
+                    subjectTitle: 'English',
+                    subjectIcon: Icons.menu_book_rounded,
+                    action: () {
+                      Navigator.pushNamed(context, '/topic',
+                          arguments: TopicArguments('English'));
+                    }),
                 SubjectTile(
-                  subjectTitle: 'World Languages',
-                  subjectIcon: Icons.translate_rounded,
-                ),
+                    subjectTitle: 'Social Studies',
+                    subjectIcon: Icons.school_rounded,
+                    action: () {
+                      Navigator.pushNamed(context, '/topic',
+                          arguments: TopicArguments('Social Studies'));
+                    }),
                 SubjectTile(
-                  subjectTitle: 'Custom Decks',
-                  subjectIcon: Icons.build_circle_rounded,
-                ),
+                    subjectTitle: 'Custom Decks',
+                    subjectIcon: Icons.build_circle_rounded,
+                    action: () {
+                      Navigator.pushNamed(context, '/topic',
+                          arguments: TopicArguments('Custom Decks'));
+                    }),
               ],
             ),
           ],

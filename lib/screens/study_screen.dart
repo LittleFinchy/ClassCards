@@ -1,20 +1,22 @@
 import '../widgets/flashCard.dart';
 import 'package:flutter/material.dart';
 import '../widgets/screenConstructor.dart';
-import '../widgets/subjectTile.dart';
-
 
 class StudyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final StudyArguments args = ModalRoute.of(context).settings.arguments;
     return ScreenWrapper(
       newBody: Container(
         child: Center(
           child: ListWheelScrollView(
-            diameterRatio: 3,
-            itemExtent: 400,
+            diameterRatio: 5,
+            itemExtent: 500,
             children: [
-              FlashCard(),
+              FlashCard(
+                prompt: args.subject,
+                answer: args.topic,
+              ),
               FlashCard(),
               FlashCard(),
               FlashCard(),
@@ -29,4 +31,10 @@ class StudyScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+class StudyArguments {
+  final String subject;
+  final String topic;
+  StudyArguments(this.subject, this.topic);
 }

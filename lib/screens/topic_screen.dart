@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import '../widgets/screenConstructor.dart';
 import '../widgets/topicTile.dart';
+import 'study_screen.dart';
 
 class TopicScreen extends StatelessWidget {
+  final String subject;
+  const TopicScreen({
+    Key key,
+    this.subject = 'Math',
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final TopicArguments args = ModalRoute.of(context).settings.arguments;
     return ScreenWrapper(
       newBody: Container(
         child: Row(
@@ -14,28 +21,46 @@ class TopicScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TopicTile(
-                  topicTitle: 'Basic Math',
-                ),
+                    topicTitle: args.subject + ' 1',
+                    action: () {
+                      Navigator.pushNamed(context, '/study',
+                          arguments: StudyArguments(args.subject, '1'));
+                    }),
                 TopicTile(
-                  topicTitle: 'Math 2',
-                ),
+                    topicTitle: args.subject + ' 3',
+                    action: () {
+                      Navigator.pushNamed(context, '/study',
+                          arguments: StudyArguments(args.subject, '3'));
+                    }),
                 TopicTile(
-                  topicTitle: 'Math 3',
-                ),
+                    topicTitle: args.subject + ' 5',
+                    action: () {
+                      Navigator.pushNamed(context, '/study',
+                          arguments: StudyArguments(args.subject, '5'));
+                    }),
               ],
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TopicTile(
-                  topicTitle: 'Social Studies',
-                ),
+                    topicTitle: args.subject + ' 2',
+                    action: () {
+                      Navigator.pushNamed(context, '/study',
+                          arguments: StudyArguments(args.subject, '2'));
+                    }),
                 TopicTile(
-                  topicTitle: 'World Languages',
-                ),
+                    topicTitle: args.subject + ' 4',
+                    action: () {
+                      Navigator.pushNamed(context, '/study',
+                          arguments: StudyArguments(args.subject, '4'));
+                    }),
                 TopicTile(
-                  topicTitle: 'Custom Decks',
-                ),
+                    topicTitle: args.subject + ' 6',
+                    action: () {
+                      Navigator.pushNamed(context, '/study',
+                          arguments: StudyArguments(args.subject, '6'));
+                    }),
               ],
             ),
           ],
@@ -43,4 +68,9 @@ class TopicScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+class TopicArguments {
+  final String subject;
+  TopicArguments(this.subject);
 }

@@ -28,7 +28,7 @@ class ScreenWrapper extends StatelessWidget {
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(10))),
       ),
       body: newBody,
-      drawer: myDrawer,
+      drawer: MyDrawer(),
     );
   }
 }

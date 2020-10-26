@@ -10,7 +10,7 @@ class MyDrawer extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [appButtonColor, Colors.blueGrey[900]], //Colors.grey[800]],
+            colors: [appButtonColor, Colors.grey[800]],
           ),
         ),
         child: SafeArea(

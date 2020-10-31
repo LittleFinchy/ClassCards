@@ -7,6 +7,7 @@ import 'package:class_cards/screens/topic_screen.dart';
 import 'storage.dart';
 import 'data/databaseHandler.dart';
 import 'package:provider/provider.dart';
+import 'screens/settings_screen.dart';
 
 void main() {
   runApp(Nav());
@@ -88,6 +89,11 @@ class Nav extends StatelessWidget {
         return MultiProvider(
           providers: [ListenableProvider<StorageApp>(create: (_) => provider)],
           child: StudyScreen(subject: subject, topic: topic),
+        );
+      case '/settings':
+        return MultiProvider(
+          providers: [ListenableProvider<StorageApp>(create: (_) => provider)],
+          child: SettingsScreen(),
         );
       default:
         return Container();

@@ -4,11 +4,13 @@ import '../settings.dart';
 class SubjectTile extends StatelessWidget {
   final String subjectTitle;
   final IconData subjectIcon;
+  final bool disabled;
   final Function action;
   SubjectTile({
     Key key,
     this.subjectTitle = 'Math',
     this.subjectIcon = Icons.calculate_rounded,
+    this.disabled = false,
     this.action,
   }) : super(key: key);
   @override
@@ -38,7 +40,7 @@ class SubjectTile extends StatelessWidget {
           color: Colors.transparent,
           child: InkWell(
             borderRadius: BorderRadius.circular(25),
-            onTap: action == null ? () {} : action,
+            onTap: (action == null) | disabled ? () {} : action,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

@@ -92,7 +92,12 @@ class MyDrawer extends StatelessWidget {
                         trailing: Icon(Icons.keyboard_arrow_right,
                             color: Colors.white),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/settings',
+                        );
+                      },
                       style: TextButton.styleFrom(primary: Colors.black),
                     ),
                     Divider(

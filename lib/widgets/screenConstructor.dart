@@ -14,7 +14,7 @@ class ScreenWrapper extends StatelessWidget {
       backgroundColor: appBodyColor,
       appBar: AppBar(
         backgroundColor: appBarColor,
-        title: Text('FLASHi'),
+        title: Text('FLASHi', style: TextStyle(fontSize: 30)),
         centerTitle: true,
         actions: [
           IconButton(

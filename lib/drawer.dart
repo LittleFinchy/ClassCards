@@ -32,7 +32,8 @@ class MyDrawer extends StatelessWidget {
                             color: Colors.white),
                       ),
                       onPressed: () {
-                        Navigator.popUntil(context, ModalRoute.withName('/'));
+                        Navigator.of(context)
+                            .popUntil((route) => route.isFirst);
                       },
                       style: TextButton.styleFrom(primary: Colors.black),
                     ),

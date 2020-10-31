@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/screenConstructor.dart';
 import '../widgets/topicTile.dart';
-import 'study_screen.dart';
+import '../widgets/dataTypes.dart';
 
 class TopicScreen extends StatelessWidget {
   final String subject;
@@ -11,7 +11,6 @@ class TopicScreen extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final TopicArguments args = ModalRoute.of(context).settings.arguments;
     return ScreenWrapper(
       newBody: Container(
         child: Row(
@@ -21,22 +20,22 @@ class TopicScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TopicTile(
-                    topicTitle: args.subject + ' 1',
+                    topicTitle: subject + ' 1',
                     action: () {
                       Navigator.pushNamed(context, '/study',
-                          arguments: StudyArguments(args.subject, '1'));
+                          arguments: StudyArguments(subject, '1'));
                     }),
                 TopicTile(
-                    topicTitle: args.subject + ' 3',
+                    topicTitle: subject + ' 3',
                     action: () {
                       Navigator.pushNamed(context, '/study',
-                          arguments: StudyArguments(args.subject, '3'));
+                          arguments: StudyArguments(subject, '3'));
                     }),
                 TopicTile(
-                    topicTitle: args.subject + ' 5',
+                    topicTitle: subject + ' 5',
                     action: () {
                       Navigator.pushNamed(context, '/study',
-                          arguments: StudyArguments(args.subject, '5'));
+                          arguments: StudyArguments(subject, '5'));
                     }),
               ],
             ),
@@ -44,22 +43,22 @@ class TopicScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TopicTile(
-                    topicTitle: args.subject + ' 2',
+                    topicTitle: subject + ' 2',
                     action: () {
                       Navigator.pushNamed(context, '/study',
-                          arguments: StudyArguments(args.subject, '2'));
+                          arguments: StudyArguments(subject, '2'));
                     }),
                 TopicTile(
-                    topicTitle: args.subject + ' 4',
+                    topicTitle: subject + ' 4',
                     action: () {
                       Navigator.pushNamed(context, '/study',
-                          arguments: StudyArguments(args.subject, '4'));
+                          arguments: StudyArguments(subject, '4'));
                     }),
                 TopicTile(
-                    topicTitle: args.subject + ' 6',
+                    topicTitle: subject + ' 6',
                     action: () {
                       Navigator.pushNamed(context, '/study',
-                          arguments: StudyArguments(args.subject, '6'));
+                          arguments: StudyArguments(subject, '6'));
                     }),
               ],
             ),
@@ -68,9 +67,4 @@ class TopicScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-class TopicArguments {
-  final String subject;
-  TopicArguments(this.subject);
 }

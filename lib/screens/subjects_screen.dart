@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/screenConstructor.dart';
 import '../widgets/subjectTile.dart';
-import 'topic_screen.dart';
+import '../widgets/dataTypes.dart';
 
 class SubjectScreen extends StatelessWidget {
   @override

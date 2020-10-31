@@ -8,13 +8,27 @@ class CreateScreen extends StatelessWidget {
       newBody: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [EnterPrompt(), EnterAnswer(), DropdownButton()],
+          children: [
+            EnterPrompt(),
+            EnterAnswer(),
+            // DropdownButton(),
+          ],
         ),
       ),
     );
   }
 }
 
-class EnterPrompt {}
+class EnterPrompt extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
 
-class EnterAnswer {}
+class EnterAnswer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}

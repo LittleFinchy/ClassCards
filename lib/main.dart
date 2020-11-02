@@ -8,6 +8,8 @@ import 'storage.dart';
 import 'data/databaseHandler.dart';
 import 'package:provider/provider.dart';
 import 'screens/settings_screen.dart';
+import 'screens/create_screen.dart';
+import 'screens/info_screen.dart';
 
 void main() {
   runApp(Nav());
@@ -94,6 +96,16 @@ class Nav extends StatelessWidget {
         return MultiProvider(
           providers: [ListenableProvider<StorageApp>(create: (_) => provider)],
           child: SettingsScreen(),
+        );
+      case '/create':
+        return MultiProvider(
+          providers: [ListenableProvider<StorageApp>(create: (_) => provider)],
+          child: CreateScreen(),
+        );
+      case '/info':
+        return MultiProvider(
+          providers: [ListenableProvider<StorageApp>(create: (_) => provider)],
+          child: InfoScreen(),
         );
       default:
         return Container();

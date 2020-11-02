@@ -22,7 +22,16 @@ class HomeScreen extends StatelessWidget {
                   );
                 },
               ),
-              BuildHomeButton(text: 'Create', icon: Icons.add_to_photos),
+              BuildHomeButton(
+                text: 'Create',
+                icon: Icons.add_to_photos,
+                action: () {
+                  Navigator.pushNamed(
+                    context,
+                    '/create',
+                  );
+                },
+              ),
             ],
           ),
         ),

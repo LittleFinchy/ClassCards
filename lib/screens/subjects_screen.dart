@@ -57,7 +57,6 @@ class SubjectScreen extends StatelessWidget {
                 SubjectTile(
                     subjectTitle: 'Custom Decks',
                     subjectIcon: Icons.build_circle_rounded,
-                    disabled: true,
                     action: () {
                       Navigator.pushNamed(context, '/topic',
                           arguments: TopicArguments('Custom Decks'));

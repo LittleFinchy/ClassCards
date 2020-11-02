@@ -17,12 +17,12 @@ Color appBodyColorB = Color(0xFF2065C5);
 Color appButtonColorB = Color(0xFF2671D9);
 
 // colors being used
-Color appBarColor = appBarColorO;
-Color appBodyColor = appBodyColorO;
-Color appButtonColor = appButtonColorO;
+Color appBarColor = appBarColorP;
+Color appBodyColor = appBodyColorP;
+Color appButtonColor = appButtonColorP;
 
 class SettingsApp {
   int selection;
 
-  SettingsApp(this.selection)
+  SettingsApp(this.selection);
 }

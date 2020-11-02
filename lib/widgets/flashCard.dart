@@ -20,7 +20,10 @@ class FlashCard extends StatelessWidget {
           width: 3,
         ),
         borderRadius: BorderRadius.circular(30),
-        color: appButtonColor,
+        image: DecorationImage(
+          image: AssetImage('assets/Purple FLASHi 1.png'),
+          fit: BoxFit.fill,
+        ),
         boxShadow: [
           BoxShadow(
             color: Colors.black,
@@ -31,10 +34,22 @@ class FlashCard extends StatelessWidget {
         ],
       ),
       child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            view != 1 ? Text(prompt) : null,
-            view != 0 ? Text(answer) : null,
+            view != 1
+                ? Text(prompt,
+                    style: TextStyle(fontSize: 40, color: Colors.white))
+                : null,
+            Divider(
+              thickness: 2,
+              indent: 50,
+              endIndent: 50,
+              color: Colors.white,
+            ),
+            view != 0
+                ? Text(answer,
+                    style: TextStyle(fontSize: 40, color: Colors.white))
+                : null,
           ].where(notNull).toList()),
     );
   }

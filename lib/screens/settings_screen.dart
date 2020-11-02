@@ -1,11 +1,14 @@
 import 'package:class_cards/widgets/screenConstructor.dart';
 import 'package:flutter/material.dart';
 import '../settings.dart';
+import '../widgets/dataTypes.dart';
 
 class SettingsScreen extends StatelessWidget {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return ScreenWrapper(
+      wrapperKey: scaffoldKey,
       newBody: Container(
         margin: EdgeInsets.all(20),
         decoration: BoxDecoration(
@@ -52,7 +55,9 @@ class SettingsScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        scaffoldKey.currentState.showSnackBar(soonSnack);
+                      },
                       style: TextButton.styleFrom(primary: Colors.black),
                     ),
                     TextButton(
@@ -70,7 +75,9 @@ class SettingsScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        scaffoldKey.currentState.showSnackBar(soonSnack);
+                      },
                       style: TextButton.styleFrom(primary: Colors.black),
                     ),
                     TextButton(
@@ -88,7 +95,9 @@ class SettingsScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        scaffoldKey.currentState.showSnackBar(soonSnack);
+                      },
                       style: TextButton.styleFrom(primary: Colors.black),
                     ),
                     TextButton(
@@ -106,7 +115,9 @@ class SettingsScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        scaffoldKey.currentState.showSnackBar(soonSnack);
+                      },
                       style: TextButton.styleFrom(primary: Colors.black),
                     ),
                     SizedBox(height: 40),

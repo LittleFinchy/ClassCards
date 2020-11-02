@@ -4,13 +4,16 @@ import '../drawer.dart';
 
 class ScreenWrapper extends StatelessWidget {
   final Container newBody;
+  final GlobalKey wrapperKey;
   ScreenWrapper({
     Key key,
     this.newBody,
+    this.wrapperKey,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: wrapperKey,
       backgroundColor: appBodyColor,
       appBar: AppBar(
         backgroundColor: appBarColor,
@@ -22,7 +25,12 @@ class ScreenWrapper extends StatelessWidget {
                 Icons.info_outline,
                 color: Colors.white,
               ),
-              onPressed: () {})
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  '/info',
+                );
+              })
         ],
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(10))),
@@ -32,10 +40,6 @@ class ScreenWrapper extends StatelessWidget {
     );
   }
 }
-
-
-
-
 
 /// TEMPLATE NEW SCREEN ///
 

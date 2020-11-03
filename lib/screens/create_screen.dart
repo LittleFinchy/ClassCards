@@ -90,7 +90,7 @@ class _CreateScreenState extends State<CreateScreen> {
                 child: TopicTile(
                   topicTitle: 'Create Card',
                   //action: take the input text and save it to the database,
-                  action: () {
+                  action: () async {
                     storage.storage.addToSCData(
                       FlashCardData(
                         subject: 'Custom Decks',
@@ -99,9 +99,9 @@ class _CreateScreenState extends State<CreateScreen> {
                         answer: inputAnswer,
                       ),
                     );
-                    Navigator.pushNamed(
-                      context,
+                    Navigator.of(context).pushNamedAndRemoveUntil(
                       '/',
+                      (route) => false,
                     );
                   },
                 ),

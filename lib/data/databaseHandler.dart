@@ -19,7 +19,6 @@ class StudyCardDatabase {
 
   static Future<Database> open() async {
     String basePath = await getDatabasesPath();
-    await deleteDatabase(join(basePath, databasePath));
     return await openDatabase(
       join(basePath, databasePath),
       version: 9,
@@ -110,9 +109,10 @@ class StudyCardDatabase {
         .rawDelete('''DELETE FROM $tableName WHERE $idName = ?''', [data.id]);
   }
 
-  Future<void> reloadTable(String path) async {
-    await deleteDatabase(path);
-    open();
+  Future<void> reloadTable() async {
+    String basePath = await getDatabasesPath();
+    await deleteDatabase(join(basePath, databasePath));
+    await open();
   }
 
   Future close() async => db.close();

@@ -4,6 +4,7 @@ import 'dataTypes.dart';
 import '../data/databaseHandler.dart';
 import '../storage.dart';
 import 'package:provider/provider.dart';
+import 'package:class_cards/widgets/topicTile.dart';
 
 class FlashCardList extends StatefulWidget {
   final StudyArguments args;
@@ -43,7 +44,17 @@ class _FlashCards extends State<FlashCardList> {
                     children: widgetList,
                   );
                 }
-                return Container(child: Text('Throw Empty'));
+                return Container(
+                  height: 50,
+                  width: 200,
+                  child: TopicTile(
+                    topicTitle: 'This Deck is Empty',
+                    //action: take the input text and save it to the database,
+                    action: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                );
               }
           }
         },

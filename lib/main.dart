@@ -28,26 +28,26 @@ class Nav extends StatelessWidget {
       builder: (context, snapshot) {
         final repository = snapshot.data;
         provider = StorageApp(repository);
-        return MultiProvider(
-          providers: [ListenableProvider<StorageApp>(create: (_) => provider)],
-          child: MaterialApp(
-            builder: (context, child) => new SafeArea(
-              child: new Settings(child: child),
+        return MaterialApp(
+          builder: (context, child) => SafeArea(
+            child: Settings(
+              child: child,
+              selection: Settings.initialSelection,
             ),
-            debugShowCheckedModeBanner: false,
-            onGenerateRoute: (settings) {
-              return MaterialPageRoute(
-                builder: (context) {
-                  return _makeRoute(
-                      context: context,
-                      routeName: settings.name,
-                      arguments: settings.arguments);
-                },
-                maintainState: true,
-                fullscreenDialog: false,
-              );
-            },
           ),
+          debugShowCheckedModeBanner: false,
+          onGenerateRoute: (settings) {
+            return MaterialPageRoute(
+              builder: (context) {
+                return _makeRoute(
+                    context: context,
+                    routeName: settings.name,
+                    arguments: settings.arguments);
+              },
+              maintainState: true,
+              fullscreenDialog: false,
+            );
+          },
         );
       },
     );

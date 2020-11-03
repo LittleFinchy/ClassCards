@@ -22,6 +22,10 @@ class Storage {
     final group = await _scData.retrieveList(subject, topic);
     return group;
   }
+
+  Future<void> resetData() async {
+    await _scData.reloadTable();
+  }
 }
 
 class StorageApp with ChangeNotifier {

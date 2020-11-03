@@ -2,6 +2,8 @@ import 'package:class_cards/widgets/screenConstructor.dart';
 import 'package:flutter/material.dart';
 import '../settings.dart';
 import '../widgets/dataTypes.dart';
+import '../storage.dart';
+import 'package:provider/provider.dart';
 
 class SettingsScreen extends StatefulWidget {
   @override
@@ -13,6 +15,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final StorageApp storage = Provider.of<StorageApp>(context);
     return ScreenWrapper(
       scaffoldKey: scaffoldKey,
       newBody: Container(
@@ -51,7 +54,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         leading: Container(
                           height: 40,
                           width: 40,
-                          color: appBodyColorO,
+                          color: Settings.appButtonColorList[0],
                         ),
                         title: Container(
                           margin: EdgeInsets.only(left: 40),
@@ -78,7 +81,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         leading: Container(
                           height: 40,
                           width: 40,
-                          color: appBodyColorP,
+                          color: Settings.appButtonColorList[1],
                         ),
                         title: Container(
                           margin: EdgeInsets.only(left: 40),
@@ -105,7 +108,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         leading: Container(
                           height: 40,
                           width: 40,
-                          color: appBodyColorB,
+                          color: Settings.appButtonColorList[2],
                         ),
                         title: Container(
                           margin: EdgeInsets.only(left: 40),
@@ -132,7 +135,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         leading: Container(
                           height: 40,
                           width: 40,
-                          color: appBodyColorR,
+                          color: Settings.appButtonColorList[3],
                         ),
                         title: Container(
                           margin: EdgeInsets.only(left: 40),
@@ -175,7 +178,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         style:
                             TextStyle(color: Color(0x7FFFFFFF), fontSize: 16),
                       ),
-                      onPressed: () {},
+                      onPressed: () async {
+                        storage.storage.resetData();
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                          '/',
+                          (route) => false,
+                        );
+                      },
                       style: TextButton.styleFrom(primary: Colors.black),
                     ),
                   ],

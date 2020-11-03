@@ -4,9 +4,11 @@ import '../widgets/subjectTile.dart';
 import '../widgets/dataTypes.dart';
 
 class SubjectScreen extends StatelessWidget {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return ScreenWrapper(
+      scaffoldKey: scaffoldKey,
       newBody: Container(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

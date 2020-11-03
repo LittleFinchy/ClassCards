@@ -2,8 +2,6 @@ import '../widgets/FlashCardList.dart';
 import 'package:flutter/material.dart';
 import '../widgets/screenConstructor.dart';
 import '../widgets/dataTypes.dart';
-import 'package:provider/provider.dart';
-import '../storage.dart';
 
 class StudyScreen extends StatefulWidget {
   final String subject;
@@ -18,14 +16,15 @@ class StudyScreen extends StatefulWidget {
 }
 
 class _StudyScreen extends State<StudyScreen> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    final StorageApp app = Provider.of<StorageApp>(context);
     final StudyArguments args = StudyArguments(widget.subject, widget.topic);
     return ScreenWrapper(
+      scaffoldKey: scaffoldKey,
       newBody: Container(
         child: Center(
-          child: FlashCardList(args: args, storage: app),
+          child: FlashCardList(args: args),
         ),
       ),
     );

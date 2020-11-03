@@ -3,12 +3,18 @@ import 'package:flutter/material.dart';
 import '../settings.dart';
 import '../widgets/dataTypes.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
+  @override
+  _SettingsScreenState createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return ScreenWrapper(
-      wrapperKey: scaffoldKey,
+      scaffoldKey: scaffoldKey,
       newBody: Container(
         margin: EdgeInsets.all(20),
         decoration: BoxDecoration(
@@ -56,7 +62,14 @@ class SettingsScreen extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
+                        setState(
+                          () {
+                            Settings.of(context).setTheme(0);
+                          },
+                        );
                         scaffoldKey.currentState.showSnackBar(soonSnack);
+                        Navigator.of(context)
+                            .pushNamedAndRemoveUntil('/', (route) => false);
                       },
                       style: TextButton.styleFrom(primary: Colors.black),
                     ),
@@ -76,7 +89,14 @@ class SettingsScreen extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
+                        setState(
+                          () {
+                            Settings.of(context).setTheme(1);
+                          },
+                        );
                         scaffoldKey.currentState.showSnackBar(soonSnack);
+                        Navigator.of(context)
+                            .pushNamedAndRemoveUntil('/', (route) => false);
                       },
                       style: TextButton.styleFrom(primary: Colors.black),
                     ),
@@ -96,7 +116,14 @@ class SettingsScreen extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
+                        setState(
+                          () {
+                            Settings.of(context).setTheme(2);
+                          },
+                        );
                         scaffoldKey.currentState.showSnackBar(soonSnack);
+                        Navigator.of(context)
+                            .pushNamedAndRemoveUntil('/', (route) => false);
                       },
                       style: TextButton.styleFrom(primary: Colors.black),
                     ),
@@ -116,7 +143,14 @@ class SettingsScreen extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
+                        setState(
+                          () {
+                            Settings.of(context).setTheme(3);
+                          },
+                        );
                         scaffoldKey.currentState.showSnackBar(soonSnack);
+                        Navigator.of(context)
+                            .pushNamedAndRemoveUntil('/', (route) => false);
                       },
                       style: TextButton.styleFrom(primary: Colors.black),
                     ),

@@ -5,13 +5,15 @@ import '../widgets/dataTypes.dart';
 
 class TopicScreen extends StatelessWidget {
   final String subject;
-  const TopicScreen({
+  TopicScreen({
     Key key,
     this.subject = 'Math',
   }) : super(key: key);
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return ScreenWrapper(
+      scaffoldKey: scaffoldKey,
       newBody: Container(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

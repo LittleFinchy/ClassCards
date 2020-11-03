@@ -10,6 +10,7 @@ import 'package:provider/provider.dart';
 import 'screens/settings_screen.dart';
 import 'screens/create_screen.dart';
 import 'screens/info_screen.dart';
+import 'settings.dart';
 
 void main() {
   runApp(Nav());
@@ -30,6 +31,9 @@ class Nav extends StatelessWidget {
         return MultiProvider(
           providers: [ListenableProvider<StorageApp>(create: (_) => provider)],
           child: MaterialApp(
+            builder: (context, child) => new SafeArea(
+              child: new Settings(child: child),
+            ),
             debugShowCheckedModeBanner: false,
             onGenerateRoute: (settings) {
               return MaterialPageRoute(

@@ -3,12 +3,11 @@ import 'flashCard.dart';
 import 'dataTypes.dart';
 import '../data/databaseHandler.dart';
 import '../storage.dart';
+import 'package:provider/provider.dart';
 
 class FlashCardList extends StatefulWidget {
   final StudyArguments args;
-  final StorageApp storage;
-  const FlashCardList({Key key, @required this.args, @required this.storage})
-      : super(key: key);
+  const FlashCardList({Key key, @required this.args}) : super(key: key);
   @override
   _FlashCards createState() => _FlashCards();
 }
@@ -18,10 +17,11 @@ class _FlashCards extends State<FlashCardList> {
 
   @override
   Widget build(BuildContext context) {
+    final StorageApp storage = Provider.of<StorageApp>(context);
     return Container(
       child: FutureBuilder<Object>(
-        future: widget.storage.storage
-            .pullSCGroup(widget.args.subject, widget.args.topic),
+        future:
+            storage.storage.pullSCGroup(widget.args.subject, widget.args.topic),
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.waiting:

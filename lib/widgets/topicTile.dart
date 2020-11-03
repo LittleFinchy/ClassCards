@@ -20,7 +20,7 @@ class TopicTile extends StatelessWidget {
           width: 3,
         ),
         borderRadius: BorderRadius.circular(30),
-        color: appButtonColor,
+        color: Settings.of(context).appButtonColor,
         boxShadow: [
           BoxShadow(
             color: Colors.black,

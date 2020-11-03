@@ -22,7 +22,7 @@ class BuildHomeButton extends StatelessWidget {
           width: 3,
         ),
         shape: BoxShape.circle,
-        color: appButtonColor,
+        color: Settings.of(context).appButtonColor,
         boxShadow: [
           BoxShadow(
             color: Colors.black,

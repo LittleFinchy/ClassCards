@@ -2,25 +2,36 @@ import 'package:flutter/material.dart';
 import '../settings.dart';
 import '../drawer.dart';
 
-class ScreenWrapper extends StatelessWidget {
+class ScreenWrapper extends StatefulWidget {
   final Container newBody;
-  final GlobalKey wrapperKey;
+  final GlobalKey<ScaffoldState> scaffoldKey;
   ScreenWrapper({
     Key key,
     this.newBody,
-    this.wrapperKey,
+    this.scaffoldKey,
   }) : super(key: key);
+
+  @override
+  _ScreenWrapperState createState() => _ScreenWrapperState();
+}
+
+class _ScreenWrapperState extends State<ScreenWrapper> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: wrapperKey,
-      backgroundColor: appBodyColor,
-      appBar: AppBar(
-        backgroundColor: appBarColor,
-        title: Text('FLASHi', style: TextStyle(fontSize: 30)),
-        centerTitle: true,
-        actions: [
-          IconButton(
+    return WillPopScope(
+      onWillPop: () async {
+        Navigator.pop(context);
+        return true;
+      },
+      child: Scaffold(
+        key: widget.scaffoldKey,
+        backgroundColor: Settings.of(context).appBodyColor, //appBodyColor
+        appBar: AppBar(
+          backgroundColor: Settings.of(context).appBarColor,
+          title: Text('FLASHi', style: TextStyle(fontSize: 30)),
+          centerTitle: true,
+          actions: [
+            IconButton(
               icon: Icon(
                 Icons.info_outline,
                 color: Colors.white,
@@ -29,17 +40,35 @@ class ScreenWrapper extends StatelessWidget {
                 Navigator.pushNamed(
                   context,
                   '/info',
+                ).then(
+                  (value) {
+                    setState(
+                      () {
+                        Settings.of(context).setTheme(
+                            Settings.of(context).selection == null
+                                ? 0
+                                : Settings.of(context).selection);
+                      },
+                    );
+                  },
                 );
-              })
-        ],
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(bottom: Radius.circular(10))),
+              },
+            ),
+          ],
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(bottom: Radius.circular(10))),
+        ),
+        body: widget.newBody,
+        drawer: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: MyDrawer(),
+        ),
       ),
-      body: newBody,
-      drawer: MyDrawer(),
     );
   }
 }
+
+void _onWillPop() {}
 
 /// TEMPLATE NEW SCREEN ///
 

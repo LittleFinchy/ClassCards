@@ -16,10 +16,12 @@ class CreateScreen extends StatefulWidget {
 }
 
 class _CreateScreenState extends State<CreateScreen> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     final StorageApp storage = Provider.of<StorageApp>(context);
     return ScreenWrapper(
+      scaffoldKey: scaffoldKey,
       newBody: Container(
         child: Center(
           child: Column(
@@ -124,7 +126,7 @@ class _EnterPromptState extends State<EnterPrompt> {
       height: 160,
       width: 300,
       decoration: BoxDecoration(
-        color: appButtonColor,
+        color: Settings.of(context).appButtonColor,
         borderRadius: BorderRadius.circular(30),
         boxShadow: [
           BoxShadow(
@@ -191,7 +193,7 @@ class _EnterAnswerState extends State<EnterAnswer> {
       height: 160,
       width: 300,
       decoration: BoxDecoration(
-        color: appButtonColor,
+        color: Settings.of(context).appButtonColor,
         borderRadius: BorderRadius.circular(30),
         boxShadow: [
           BoxShadow(

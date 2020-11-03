@@ -7,7 +7,7 @@ Widget myDrawer = Drawer(
       gradient: LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
-        colors: [appButtonColor, Colors.grey[800]],
+        colors: [appButtonColorO, Colors.grey[800]],
       ),
     ),
     child: SafeArea(

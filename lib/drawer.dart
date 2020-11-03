@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'settings.dart';
+import 'widgets/dataTypes.dart';
 
 class MyDrawer extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class MyDrawer extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [appButtonColor, Colors.grey[800]],
+            colors: [Settings.of(context).appButtonColor, Colors.grey[800]],
           ),
         ),
         child: SafeArea(
@@ -33,7 +34,7 @@ class MyDrawer extends StatelessWidget {
                       ),
                       onPressed: () {
                         Navigator.of(context)
-                            .popUntil((route) => route.isFirst);
+                            .pushNamedAndRemoveUntil('/', (route) => false);
                       },
                       style: TextButton.styleFrom(primary: Colors.black),
                     ),
@@ -54,7 +55,9 @@ class MyDrawer extends StatelessWidget {
                         trailing: Icon(Icons.keyboard_arrow_right,
                             color: Colors.white),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Scaffold.of(context).showSnackBar(soonSnack);
+                      },
                       style: TextButton.styleFrom(primary: Colors.black),
                     ),
                     Divider(
@@ -73,7 +76,9 @@ class MyDrawer extends StatelessWidget {
                         trailing: Icon(Icons.keyboard_arrow_right,
                             color: Colors.white),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Scaffold.of(context).showSnackBar(soonSnack);
+                      },
                       style: TextButton.styleFrom(primary: Colors.black),
                     ),
                     Divider(
@@ -93,6 +98,7 @@ class MyDrawer extends StatelessWidget {
                             color: Colors.white),
                       ),
                       onPressed: () {
+                        Navigator.pop(context);
                         Navigator.pushNamed(
                           context,
                           '/settings',

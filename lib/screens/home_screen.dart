@@ -3,9 +3,11 @@ import '../widgets/homePageButton.dart';
 import '../widgets/screenConstructor.dart';
 
 class HomeScreen extends StatelessWidget {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return ScreenWrapper(
+      scaffoldKey: scaffoldKey,
       newBody: Container(
         child: Center(
           child: Column(

@@ -147,6 +147,10 @@ class FlashCardData {
 }
 
 final initialDatabase = [
+  //Math Basic
   FlashCardData(subject: 'Math', topic: '1', prompt: '1 + 1 = ', answer: '2'),
+  FlashCardData(subject: 'Math', topic: '1', prompt: '9 / 3 = ', answer: '3'),
   FlashCardData(subject: 'Math', topic: '1', prompt: '2 + 2 = ', answer: '5'),
+
+  //Math Trig
 ];

@@ -28,7 +28,7 @@ class _ScreenWrapperState extends State<ScreenWrapper> {
         backgroundColor: Settings.of(context).appBodyColor, //appBodyColor
         appBar: AppBar(
           backgroundColor: Settings.of(context).appBarColor,
-          title: Text('FLASHi', style: TextStyle(fontSize: 30)),
+          title: Text('Flashi', style: TextStyle(fontSize: 30, fontStyle: FontStyle.italic)),
           centerTitle: true,
           actions: [
             IconButton(

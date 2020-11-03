@@ -119,13 +119,33 @@ class MyDrawer extends StatelessWidget {
                 child: Align(
                   alignment: FractionalOffset.bottomCenter,
                   child: Column(
-                    children: <Widget>[
-                      Divider(),
-                      ListTile(
-                          leading: Icon(Icons.settings),
-                          title: Text('Facebook')),
-                      ListTile(
-                          leading: Icon(Icons.help), title: Text('Instagram'))
+                    children: [
+                      Divider(
+                      thickness: 1,
+                      color: Colors.black,
+                    ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text('Flashi', style: TextStyle(fontSize: 32, color: Colors.white, fontStyle: FontStyle.italic)),
+                              SizedBox(height: 8,),
+                              Text('A study app..\n..with flashcards!', style: TextStyle(fontSize: 16, color: Colors.white)),
+                            ],
+                          ),
+                          Container(
+                            height: 120,
+                            width: 120,
+                            decoration: BoxDecoration(image: DecorationImage(fit: BoxFit.fill, image: AssetImage('assets/flashi_logo.png'))))
+                          ],),
+                      
+                      Divider(
+                      thickness: 1,
+                      color: Colors.black,
+                    ),
+                      SizedBox(height: 20),
                     ],
                   ),
                 ),
@@ -137,3 +157,19 @@ class MyDrawer extends StatelessWidget {
     );
   }
 }
+
+
+
+// Container(
+//       width: 280,
+//       height: 340,
+//       decoration: BoxDecoration(
+//         border: Border.all(
+//           color: Colors.white,
+//           width: 3,
+//         ),
+//         borderRadius: BorderRadius.circular(30),
+//         image: DecorationImage(
+//           image: Settings.of(context).appCardBackground,
+//           fit: BoxFit.fill,
+//         ),

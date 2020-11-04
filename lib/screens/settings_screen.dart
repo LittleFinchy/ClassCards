@@ -1,7 +1,6 @@
 import 'package:class_cards/widgets/screenConstructor.dart';
 import 'package:flutter/material.dart';
 import '../settings.dart';
-import '../widgets/dataTypes.dart';
 import '../storage.dart';
 import 'package:provider/provider.dart';
 
@@ -70,7 +69,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             Settings.of(context).setTheme(0);
                           },
                         );
-                        scaffoldKey.currentState.showSnackBar(soonSnack);
                         Navigator.of(context)
                             .pushNamedAndRemoveUntil('/', (route) => false);
                       },
@@ -97,7 +95,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             Settings.of(context).setTheme(1);
                           },
                         );
-                        scaffoldKey.currentState.showSnackBar(soonSnack);
                         Navigator.of(context)
                             .pushNamedAndRemoveUntil('/', (route) => false);
                       },
@@ -124,7 +121,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             Settings.of(context).setTheme(2);
                           },
                         );
-                        scaffoldKey.currentState.showSnackBar(soonSnack);
                         Navigator.of(context)
                             .pushNamedAndRemoveUntil('/', (route) => false);
                       },
@@ -151,7 +147,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             Settings.of(context).setTheme(3);
                           },
                         );
-                        scaffoldKey.currentState.showSnackBar(soonSnack);
                         Navigator.of(context)
                             .pushNamedAndRemoveUntil('/', (route) => false);
                       },

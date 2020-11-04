@@ -5,6 +5,7 @@ import '../data/databaseHandler.dart';
 import '../storage.dart';
 import 'package:provider/provider.dart';
 import 'package:class_cards/widgets/topicTile.dart';
+import 'dart:io';
 
 class FlashCardList extends StatefulWidget {
   final StudyArguments args;
@@ -29,7 +30,18 @@ class _FlashCards extends State<FlashCardList> {
               return Container(child: Text('Throw Waiting'));
             default:
               if (snapshot.hasError)
-                return Container(child: Text('Throw Error'));
+                return Container(
+                  height: 150,
+                  width: 200,
+                  child: TopicTile(
+                    topicTitle:
+                        'An Error Has Occured, Please Click And Reload App',
+                    //action: take the input text and save it to the database,
+                    action: () {
+                      exit(0);
+                    },
+                  ),
+                );
               else {
                 List<FlashCardData> entries = snapshot.data;
                 if (entries.length > 0) {

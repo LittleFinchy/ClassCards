@@ -22,19 +22,19 @@ class TopicScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TopicTile(
-                    topicTitle: subject + ' 1',
+                    topicTitle: topicNames[subject][0],
                     action: () {
                       Navigator.pushNamed(context, '/study',
                           arguments: StudyArguments(subject, '1'));
                     }),
                 TopicTile(
-                    topicTitle: subject + ' 3',
+                    topicTitle: topicNames[subject][2],
                     action: () {
                       Navigator.pushNamed(context, '/study',
                           arguments: StudyArguments(subject, '3'));
                     }),
                 TopicTile(
-                    topicTitle: subject + ' 5',
+                    topicTitle: topicNames[subject][4],
                     action: () {
                       Navigator.pushNamed(context, '/study',
                           arguments: StudyArguments(subject, '5'));
@@ -45,19 +45,19 @@ class TopicScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TopicTile(
-                    topicTitle: subject + ' 2',
+                    topicTitle: topicNames[subject][1],
                     action: () {
                       Navigator.pushNamed(context, '/study',
                           arguments: StudyArguments(subject, '2'));
                     }),
                 TopicTile(
-                    topicTitle: subject + ' 4',
+                    topicTitle: topicNames[subject][3],
                     action: () {
                       Navigator.pushNamed(context, '/study',
                           arguments: StudyArguments(subject, '4'));
                     }),
                 TopicTile(
-                    topicTitle: subject + ' 6',
+                    topicTitle: topicNames[subject][5],
                     action: () {
                       Navigator.pushNamed(context, '/study',
                           arguments: StudyArguments(subject, '6'));

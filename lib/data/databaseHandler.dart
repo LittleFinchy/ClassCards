@@ -112,7 +112,7 @@ class StudyCardDatabase {
   Future<void> reloadTable() async {
     String basePath = await getDatabasesPath();
     await deleteDatabase(join(basePath, databasePath));
-    await open();
+    // StudyCardDatabase._(await open());
   }
 
   Future close() async => db.close();
@@ -147,10 +147,42 @@ class FlashCardData {
 }
 
 final initialDatabase = [
-  //Math Basic
+  //Math - Basic
   FlashCardData(subject: 'Math', topic: '1', prompt: '1 + 1 = ', answer: '2'),
   FlashCardData(subject: 'Math', topic: '1', prompt: '9 / 3 = ', answer: '3'),
   FlashCardData(subject: 'Math', topic: '1', prompt: '2 + 2 = ', answer: '5'),
 
-  //Math Trig
+  //Math - Trig
+
+  //World Languages - Spanish
+  FlashCardData(
+      subject: 'World Languages',
+      topic: '1',
+      prompt: 'bread',
+      answer: 'un pan'),
+  FlashCardData(
+      subject: 'World Languages', topic: '1', prompt: 'fox', answer: 'zorro'),
+  FlashCardData(
+      subject: 'World Languages', topic: '1', prompt: 'woman', answer: 'mujer'),
+  //World Languages - French
+  FlashCardData(
+      subject: 'World Languages', topic: '2', prompt: 'bread', answer: 'pain'),
+  FlashCardData(
+      subject: 'World Languages', topic: '2', prompt: 'fox', answer: 'renarde'),
+  FlashCardData(
+      subject: 'World Languages', topic: '2', prompt: 'woman', answer: 'femme'),
+  //World Languages - German
+  FlashCardData(
+      subject: 'World Languages', topic: '3', prompt: 'bread', answer: 'brot'),
+  FlashCardData(
+      subject: 'World Languages', topic: '3', prompt: 'fox', answer: 'fuchs'),
+  FlashCardData(
+      subject: 'World Languages', topic: '3', prompt: 'woman', answer: 'frau'),
+  //World Languages - Italian
+  FlashCardData(
+      subject: 'World Languages', topic: '4', prompt: 'bread', answer: 'pane'),
+  FlashCardData(
+      subject: 'World Languages', topic: '4', prompt: 'fox', answer: 'volpe'),
+  FlashCardData(
+      subject: 'World Languages', topic: '4', prompt: 'woman', answer: 'donna'),
 ];

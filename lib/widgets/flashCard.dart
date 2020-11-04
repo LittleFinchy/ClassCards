@@ -38,8 +38,14 @@ class FlashCard extends StatelessWidget {
           children: [
             SizedBox(height: 20),
             view != 1
-                ? Text(prompt,
-                    style: TextStyle(fontSize: 40, color: Colors.white))
+                ? Padding(
+                    padding: const EdgeInsets.only(left: 35, right: 35),
+                    child: Center(
+                      child: Text(prompt,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 15, color: Colors.white)),
+                    ),
+                  )
                 : null,
             view == 2
                 ? Divider(
@@ -50,8 +56,14 @@ class FlashCard extends StatelessWidget {
                   )
                 : null,
             view != 0
-                ? Text(answer,
-                    style: TextStyle(fontSize: 40, color: Colors.white))
+                ? Padding(
+                    padding: const EdgeInsets.only(left: 35, right: 35),
+                    child: Center(
+                      child: Text(answer,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 15, color: Colors.white)),
+                    ),
+                  )
                 : null,
           ].where(notNull).toList()),
     );

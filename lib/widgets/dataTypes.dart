@@ -18,44 +18,44 @@ SnackBar soonSnack = SnackBar(
 
 Map<String, List<String>> topicNames = {
   'Math': [
-    'Math 1', //1
-    'Math 2', //2
-    'Math 3', //3
-    'Math 4', //4
-    'Math 5', //5
-    'Math 6', //6
+    'Basic', //1
+    'Intermediate', //2
+    'Trigonometry', //3
+    'Algebra', //4
+    'Geometry', //5
+    'Calculus', //6
   ],
   'English': [
-    'English 1', //1
-    'English 2', //2
-    'English 3', //3
-    'English 4', //4
-    'English 5', //5
-    'English 6', //6
+    'Grammar', //1
+    'Spelling', //2
+    'Vocabulary', //3
+    'Literature', //4
+    'MLA Formatting', //5
+    'APA Formatting', //6
   ],
   'Science': [
-    'Science 1', //1
-    'Science 2', //2
-    'Science 3', //3
-    'Science 4', //4
-    'Science 5', //5
-    'Science 6', //6
+    'Physics', //1
+    'Chemistry', //2
+    'Biology', //3
+    'Geology', //4
+    'Astronomy', //5
+    'Environmental Science', //6
   ],
   'Social Studies': [
-    'Social Studies 1', //1
-    'Social Studies 2', //2
-    'Social Studies 3', //3
-    'Social Studies 4', //4
-    'Social Studies 5', //5
-    'Social Studies 6', //6
+    'American History', //1
+    'World History', //2
+    'Roman History', //3
+    'Geography', //4
+    'Philosophy', //5
+    'Economics', //6
   ],
   'World Languages': [
-    'World Languages 1', //1
-    'World Languages 2', //2
-    'World Languages 3', //3
-    'World Languages 4', //4
-    'World Languages 5', //5
-    'World Languages 6', //6
+    'Spanish', //1
+    'French', //2
+    'German', //3
+    'Italian', //4
+    'Russian', //5
+    'Portuguese', //6
   ],
   'Custom Decks': [
     'Custom Deck 1',

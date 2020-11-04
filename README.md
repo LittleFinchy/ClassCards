@@ -1,5 +1,5 @@
-- # [Available on the Google Play Store](https://play.google.com/store)
-- [Or watch a demo on youtube!](https://www.youtube.com/)
+- # [Available on the Google Play Store](https://play.google.com/store) "{coming soon}"
+- [Or watch a demo on youtube!](https://www.youtube.com/) "{coming soon}"
 
 # Flashi:
 

@@ -9,9 +9,10 @@ A study app with flashcards
 
 This is a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+- [Follow this video to run the project on your computer] (https://www.youtube.com/watch?v=ly0hAtV7EBg)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+-How To Use Flashi:
 
+-Simply tap on ‘Study’ and choose your subject and topic. Example: ...Study-->Science-->Biology…
+-Enjoy an easy to use scroll wheel with all the pre made Flashi flashcards in that topic
+-You can also create your own custom flashcards by tapping on ‘Create’ from the homescreen

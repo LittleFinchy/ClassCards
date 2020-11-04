@@ -1,11 +1,10 @@
 - # [Available on the Google Play Store](https://play.google.com/store) (coming soon)
-- [Or watch a demo on youtube!](https://www.youtube.com/) (coming soon)
+- # [Or watch a demo on youtube!](https://www.youtube.com/) (coming soon)
 
 
 # Flashi:
 
 A study app with flashcards
-
 
 
 ## Getting Started
